@@ -46,8 +46,8 @@ class MessageItem implements ListItem {
 // Image Item
 class ImageItem implements ListItem {
   final String title;
-  final String imageUrl;
-  ImageItem(this.title, this.imageUrl);
+  final String image;
+  ImageItem(this.title, this.image);
 
   @override
   Widget buildItem(BuildContext context) {
@@ -63,8 +63,8 @@ class ImageItem implements ListItem {
           ),
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Image.network(
-              imageUrl,
+            child: Image.asset(
+              image,
               height: 200,
               width: double.infinity,
               fit: BoxFit.cover,
@@ -87,8 +87,12 @@ class LayoutMandiri2 extends StatelessWidget {
         if (i % 6 == 0) {
           return HeadingItem('Heading $i');
         } else if (i % 6 == 3) {
-          return ImageItem(
-              'Image item $i', 'https://400/200?random=$i');
+          final Images = [
+            'images/boboy.jpg',
+            'images/boboy2.png',
+            'images/boboy3.jpg',
+          ];
+          return ImageItem('Image Item $i', Images[(i ~/ 3) % Images.length]);
         } else {
           return MessageItem('Sender $i', 'Message body $i');
         }
