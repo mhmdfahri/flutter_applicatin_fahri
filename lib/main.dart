@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_applicatin_fahri/mandiri.dart';
+import 'package:flutter_applicatin_fahri/layout_mandiri2.dart';
 //import 'package:flutter_applicatin_fahri/layout.dart';
 
 void main() {
@@ -13,6 +13,6 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Aplikasi Flutter",
-      home: mandiri());
+      home:LayoutMandiri2());
   }
 }
